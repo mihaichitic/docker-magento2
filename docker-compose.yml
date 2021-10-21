@@ -1,10 +1,10 @@
 version: '2'
 services:
   apache:
-#    build:
-#      context: .
-#      dockerfile: build/apache/php-7.4/Dockerfile
-    image: rifkat/magento-php-apache:7.4
+    build:
+      context: .
+      dockerfile: build/apache/php-7.4/Dockerfile-neo
+#    image: rifkat/magento-php-apache:7.4
     ports:
       - "80:80"
       - "9001:9000" # xdebug
@@ -75,7 +75,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - ./elasticsearchdata:/usr/share/elasticsearch/data
+      - elasticsearchdata:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
@@ -87,4 +87,6 @@ networks:
 
 volumes:
   dbdata:
+    driver: local
+  elasticsearchdata:
     driver: local

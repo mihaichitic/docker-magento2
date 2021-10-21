@@ -1,0 +1,4 @@
+FROM rifkat/magento-php-apache:7.4
+
+COPY ./src /var/www/html
+
