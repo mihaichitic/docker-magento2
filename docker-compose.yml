@@ -15,6 +15,7 @@ services:
     environment:
       XDEBUG_CONFIG: "remote_host=localhost"
       PHP_IDE_CONFIG: "serverName=Docker"
+      MIHAI: "true"
 #      VIRTUAL_HOST: "example.localhost"
     depends_on:
       - db
