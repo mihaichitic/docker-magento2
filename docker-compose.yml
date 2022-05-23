@@ -32,6 +32,7 @@ services:
       - MYSQL_DATABASE=magento
       - MYSQL_USER=magento
       - MYSQL_PASSWORD=magento
+      - MIHAI=true
     volumes:
       - dbdata:/var/lib/mysql
       - ./backups:/var/tmp/backups
